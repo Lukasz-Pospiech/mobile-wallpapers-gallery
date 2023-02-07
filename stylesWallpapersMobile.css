@@ -14,9 +14,6 @@ body {
     height: calc(var(--vh, 1vh) * 100);
     overflow: clip;
     padding: 0;
-    background-image: url('backgroundGall.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 *::-webkit-scrollbar {
@@ -83,6 +80,9 @@ body {
     width: 100vw;
     overflow: clip;
     z-index: 1;
+    background-image: url('backgroundGall.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #loadingSentenceDiv {
@@ -174,7 +174,7 @@ body {
         bottom: calc(var(--vh, 1vh) * 105);
     }
     100% {
-        bottom: calc(var(--vh, 1vh) * 64);
+        bottom: calc(var(--vh, 1vh) * 66);
     }
 }
 
