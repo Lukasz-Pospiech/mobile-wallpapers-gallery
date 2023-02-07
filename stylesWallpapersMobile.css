@@ -1,0 +1,1338 @@
+* {
+    box-sizing: border-box;
+    border: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+body {
+    position: fixed;
+    background-color: black;
+    max-width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: clip;
+    padding: 0;
+    background-image: url('backgroundGall.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+@font-face {
+    font-family: 'Monoton';
+    src: url('monotonFont.woff2') format('woff2');
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Alata';
+    src: url('alataFont.woff2') format('woff2');
+    font-display: block;
+} 
+
+@font-face {
+    font-family: 'Robot_Font';
+    src: url('robotFont.woff2') format('woff2');
+    font-display: block;
+} 
+
+/* WHEN USER ROTATES PHONE SCREEN TO HORIZONTAL, HE GETS A WARNING */
+#wrongOrientationWarningDIV {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    z-index: 9000; 
+    background-color: black;
+    text-align: center;
+}
+
+#morpheus {
+    position: absolute;
+    top: calc(var(--vh, 1vh) * 10);;
+    left: 20vw;
+    width: 60vw;
+    height: calc(var(--vh, 1vh) * 80);
+    opacity: 1; 
+    transition: opacity 1s;
+}
+
+#phoneRotate {
+    position: absolute;
+    top: calc(var(--vh, 1vh) * 10);;
+    left: 30vw;
+    width: 40vw;
+    height: calc(var(--vh, 1vh) * 80);
+    opacity: 0; 
+    transition: opacity 1s;
+}
+
+
+#container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    overflow: clip;
+    z-index: 1;
+}
+
+#loadingSentenceDiv {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    bottom: calc(var(--vh, 1vh) * 60);
+    font-family: 'Alata';
+    font-size: 6vw;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+#loadingIcon {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 16);
+    left: 35vw;
+    bottom: calc(var(--vh, 1vh) * 40);
+    z-index: 3;
+}
+
+#loadingContainer {
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    left: 0;
+    top: 0;
+    overflow: clip;
+    padding: 0;
+    z-index: 12000;
+}
+
+#superman2 {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 34);
+    left: 10vw;
+    bottom: calc(var(--vh, 1vh) * -10);
+    animation-name: superman2Anim;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes superman2Anim {
+    0% {
+        bottom: calc(var(--vh, 1vh) * -10);
+    }
+    30% {
+        bottom: calc(var(--vh, 1vh) * 5);
+        left: 2vw;
+        rotate: -7deg;
+    }
+    600% {
+        bottom: calc(var(--vh, 1vh) * -10);
+        left: 14vw;
+        rotate: 5deg;
+    }
+    100% {
+        bottom: calc(var(--vh, 1vh) * -10);
+        left: 10vw;
+        rotate: 0deg;
+    }
+}
+
+#spiderman2 {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 32);
+    right: 0vw;
+    bottom: calc(var(--vh, 1vh) * 105);
+    animation-name: spiderman2Anim;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-delay: 2s;
+}
+
+@keyframes spiderman2Anim {
+    0% {
+        bottom: calc(var(--vh, 1vh) * 105);
+    }
+    100% {
+        bottom: calc(var(--vh, 1vh) * 64);
+    }
+}
+
+.gallerypic1 {
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    left: 0vw;
+    top: 0vw;
+    overflow: clip;
+    padding: 0;
+}
+
+#superman {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 40);
+    left: 105vw;
+    bottom: calc(var(--vh, 1vh) * 5);
+}
+
+.supermanAnimation {
+    animation-name: supermanAnim;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    z-index: 7;
+    animation-delay: 7s;
+}
+
+@keyframes supermanAnim {
+    0% {
+        left: 105vw;
+        bottom: calc(var(--vh, 1vh) * 5);
+    }
+    100% {
+        left: -4vw;
+        bottom: calc(var(--vh, 1vh) * 105);
+    }
+}
+
+#heman {
+    display: block;
+    position: absolute;
+    width: 40vw;
+    left: -40vw;
+    bottom: calc(var(--vh, 1vh) * 5);   
+}
+
+.hemanAnimation {
+    animation-name: hemanAnim;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    z-index: 4;
+    animation-delay: 5s; 
+}
+
+@keyframes hemanAnim {
+    0% {
+        left: -40vw;
+    }
+    15% {
+        left: 6vw;
+    }
+    85% {
+        left: 6vw;
+    }
+    100% {
+        left: -40vw;
+    }
+}
+
+#spiderman {
+    display: block;
+    position: absolute;
+    width: 40vw;
+    left: 30vw;
+    z-index: 3;
+    transform-origin: 50% 0;
+}
+
+.spidermanStart {
+    top: calc(var(--vh, 1vh) * -60);  
+}
+
+.spidermanAnimation1 {
+    animation-name: spidermanAnim1;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    /* animation-delay: 21s; */
+    top: calc(var(--vh, 1vh) * -60);
+}
+
+@keyframes spidermanAnim1 {
+    0% {
+        top: calc(var(--vh, 1vh) * -60);
+    }
+    30% {
+        top: 0;
+    }
+    50% {
+        top: 0;
+    }
+    70% {
+        top: calc(var(--vh, 1vh) * -10);
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.spidermanAnimation2 {
+    animation-name: spidermanAnim2;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes spidermanAnim2 {
+    0% {
+        rotate: 0deg;
+    }
+    20% {
+        rotate: -150deg;
+    }
+    62% {
+        rotate: 35deg;
+    }
+    100% {
+        rotate: -35deg;
+    }
+}
+
+.spidermanAnimation3 {
+    animation-name: spidermanAnim3;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes spidermanAnim3 {
+    0% {
+        rotate: -35deg;
+    }
+    50% {
+        rotate: 35deg;
+    }
+    100% {
+        rotate: -35deg;
+    }
+}
+
+.bigLetters {
+    display: none;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 14.5);
+    left: 0;
+    font-size: 70vw;
+    font-family: 'Monoton';
+    text-align: right;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    line-height: calc(var(--vh, 1vh) * 14.5);
+    color: whitesmoke;
+    transition: font-size 2s, opacity 0.5s, background-color 0.4s;
+    opacity: 0;
+    z-index: 5;
+}
+
+#G {
+    width: 25vw;
+    top: 0; 
+}
+
+#A {
+    width: 36vw;
+    top: calc(var(--vh, 1vh) * 14.5);
+}
+
+#L {
+    width: 48vw;
+    top: calc(var(--vh, 1vh) * 29);
+}
+
+#L2 {
+    width: 62vw;
+    top: calc(var(--vh, 1vh) * 43.5);
+}
+
+#E {
+    width: 75vw;
+    top: calc(var(--vh, 1vh) * 58);
+}
+
+#R {
+    width: 88vw;
+    top: calc(var(--vh, 1vh) * 72.5);
+}
+
+#Y {
+    width: 100vw;
+    top: calc(var(--vh, 1vh) * 87);
+}
+
+.transitiveColorDiv {
+    transition: background-color 1s;
+}
+
+.hideDivAnimation {
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 14.5);
+    left: 0vw;
+    font-size: 18vw;
+    font-family: 'Monoton';
+    text-align: right;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    line-height: calc(var(--vh, 1vh) * 14.5);
+    color: whitesmoke;
+    animation-name: hideLetterDivs;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    transition: background-color 0.4s;
+    z-index: 5;
+}
+
+@keyframes hideLetterDivs {
+    from {
+        left: 0vw;
+    }
+    to {
+        left: -100vw;
+    }
+} 
+
+.beetlejuiceBegin {
+    display: none;
+}
+
+.beetlejuiceAnimation1 {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 130);
+    rotate: -40deg;
+    left: 120vw;
+    top: calc(var(--vh, 1vh) * 0);
+    animation-name: beetlejuiceAnim1;
+    animation-duration: 21s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    transform-origin: 33% 16%;
+    z-index: 4;
+}
+
+@keyframes beetlejuiceAnim1 {
+    0% {
+        height: calc(var(--vh, 1vh) * 130);
+        rotate: -40deg;
+        left: 120vw;
+        top: calc(var(--vh, 1vh) * 0);
+    }
+    7% {
+        height: calc(var(--vh, 1vh) * 130);
+        rotate: -40deg;
+        left: 50vw;
+        top: calc(var(--vh, 1vh) * 0); 
+    }
+    11% {
+        height: calc(var(--vh, 1vh) * 130);
+        rotate: -40deg;
+        left: 50vw;
+        top: calc(var(--vh, 1vh) * 0); 
+    }
+    28% {
+        height: calc(var(--vh, 1vh) * 50);
+        rotate: -330deg;
+        left: 20vw;
+        top: calc(var(--vh, 1vh) * 36);
+    }
+    32% {
+        height: calc(var(--vh, 1vh) * 50);
+        rotate: -362deg;
+        left: 3vw;
+        top: calc(var(--vh, 1vh) * 46);
+    }
+    97% {
+        height: calc(var(--vh, 1vh) * 50);
+        rotate: -362deg;
+        left: 3vw;
+        top: calc(var(--vh, 1vh) * 46);
+    }
+    100% {
+        height: calc(var(--vh, 1vh) * 50);
+        rotate: -385deg;
+        left: 130vw;
+        top: calc(var(--vh, 1vh) * 46);
+    }
+}
+
+.pics300Fall {
+    display: block;
+    position: absolute;
+    width: 20vw;
+    height: calc(var(--vh, 1vh) * 55);
+    top: calc(var(--vh, 1vh) * -65);
+    left: 53vw;
+    font-family: 'Alata', sans-serif;
+    letter-spacing: 2px;
+    padding: 2vw;
+    text-align: left;
+    color: whitesmoke;
+    background-color: brown;
+    animation-name: pics300FallAnimation;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out; 
+    z-index: 5;
+}
+
+@keyframes pics300FallAnimation {
+    0% {
+        top: calc(var(--vh, 1vh) * -65);
+    }
+    19% {
+        top: calc(var(--vh, 1vh) * 75);
+    }
+    31% {
+        top: calc(var(--vh, 1vh) * 22);
+    }  
+    46% {
+        top: calc(var(--vh, 1vh) * 45);
+    }
+    68% {
+        top: calc(var(--vh, 1vh) * 45);
+        rotate: 0deg;
+    }  
+    81% {
+        top: calc(var(--vh, 1vh) * 45);
+        rotate: 88deg;
+        left: 53vw;
+    }
+    94% {
+        top: calc(var(--vh, 1vh) * 45);
+        rotate: 88deg;
+        left: 32vw;
+    }
+    100% {
+        top: calc(var(--vh, 1vh) * 45);
+        rotate: 88deg;
+        left: 160vw;
+    }
+}
+
+#t1 {
+    font-size: 15vw;
+    margin-left: -12vw;
+}
+
+#t2 {
+    font-size: 12vw;
+}
+
+#t3 {
+    font-size: 6.5vw; 
+}
+
+#t4 {
+    font-size: 9vw;
+}
+
+#t5 {
+    font-size: 22vw;
+    margin-left: -16vw;
+    letter-spacing: 2vw;
+}
+
+#swipeSentenceDiv {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 100vw;
+    left: 0;
+    bottom: calc(var(--vh, 1vh) * 54);
+    font-family: 'Alata';
+    font-size: 6vw;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+#swipeIcon {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    height: calc(var(--vh, 1vh) * 16);
+    z-index: 9;
+    left: 35vw;
+    bottom: calc(var(--vh, 1vh) * 36);
+}
+
+.picInvisible {
+    display: none;
+    position: absolute;
+    overflow: clip;
+    padding: 0;
+}
+
+.picHiddenToLeft {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    left: 100vw;
+    top: 0vw;
+    animation-name: picHiddenToLeft;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    overflow: clip;
+    padding: 0;
+}
+
+@keyframes picHiddenToLeft {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: 0vw;
+    }
+}
+
+.picVisibleToLeft {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    right: 0vw;
+    top: 0vw;
+    animation-name: picVisibleToLeft;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    overflow: clip;
+    padding: 0;
+}
+
+@keyframes picVisibleToLeft {
+    0% {
+        right: 0vw;
+    }
+    100% {
+        right: 100vw;
+    }
+}
+
+.picHiddenToRight {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    right: 100vw;
+    top: 0;
+    animation-name: picHiddenToRight;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    overflow: clip;
+    padding: 0;
+}
+
+@keyframes picHiddenToRight {
+    0% {
+        right: 100vw;
+    }
+    100% {
+        right: 0vw;
+    }
+}
+
+.picVisibleToRight {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    left: 0vw;
+    top: 0vw;
+    animation-name: picVisibleToRight;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    overflow: clip;
+    padding: 0;
+}
+
+@keyframes picVisibleToRight {
+    0% {
+        left: 0vw;
+    }
+    100% {
+        left: 100vw;
+    }
+}
+
+#swipeArea {
+    position: absolute;
+    z-index: 50;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    left: 0;
+    top: 0;
+    overflow: clip;
+    padding: 0;
+}
+
+#tiredDiv {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: calc(var(--vh, 1vh) * 3);
+    font-family: 'Alata';
+    font-size: 6vw;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: -0.5vw;
+    padding: 0;
+}
+
+#l1 {
+    --i: 1;
+}
+#l2 {
+    --i: 2;
+}
+#l3 {
+    --i: 3;
+}
+#l4 {
+    --i: 4;
+}
+#l5 {
+    --i: 5;
+}
+#l6 {
+    --i: 6;
+}
+#l7 {
+    --i: 7;
+}
+#l8 {
+    --i: 8;
+}
+#l9 {
+    --i: 9;
+}
+#l10 {
+    --i: 10;
+}
+#l11 {
+    --i: 11;
+}
+#l12 {
+    --i: 12;
+}
+#l13 {
+    --i: 13;
+}
+#l14 {
+    --i: 14;
+}
+#l15 {
+    --i: 15;
+}
+#l16 {
+    --i: 16;
+}
+#l17 {
+    --i: 17;
+}
+#l18 {
+    --i: 18;
+}
+#l19 {
+    --i: 19;
+}
+
+.letterJumpUp {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    animation-name: letterJumpUpAnim;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: calc(800ms + var(--i) * 40ms);
+}
+
+@keyframes letterJumpUpAnim {
+    0%, 20%, 100% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-1vw);
+    }
+}
+
+#tapMiniaturesDiv {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: calc(var(--vh, 1vh) * 8);
+    font-family: 'Alata';
+    font-size: 6vw;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: -0.5vw;
+}
+
+#l20 {
+    --i: 1;
+}
+#l21 {
+    --i: 2;
+}
+#l22 {
+    --i: 3;
+}
+#l23 {
+    --i: 4;
+}
+#l24 {
+    --i: 5;
+}
+#l25 {
+    --i: 6;
+}
+#l26 {
+    --i: 7;
+}
+#l27 {
+    --i: 8;
+}
+#l28 {
+    --i: 9;
+}
+#l29 {
+    --i: 10;
+}
+#l30 {
+    --i: 11;
+}
+#l31 {
+    --i: 12;
+}
+#l32 {
+    --i: 13;
+}
+#ldot1 {
+    --i: 14;
+}
+#ldot2 {
+    --i: 15;
+}
+#ldot3 {
+    --i: 16;
+}
+
+.letterJumpUp2 {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    animation-name: letterJumpUp2Anim;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: calc(2.7s + var(--i) * 40ms);
+}
+
+@keyframes letterJumpUp2Anim {
+    0%, 20%, 100% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-1vw);
+    }
+}
+
+.miniGallIcon {
+    position: absolute;
+    width: 26vw;
+    height: 42vw;
+    left: 37vw;
+    top: calc(var(--vh, 1vh) * 15);
+    animation-name: miniGalleryIconAnim;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    z-index: 200;
+}
+
+@keyframes miniGalleryIconAnim {
+    0% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+} 
+
+.beetlejuiceBisss {
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 53);
+    rotate: -122deg;
+    top: calc(var(--vh, 1vh) * 21);
+    left: 58vw;
+}
+
+.beetlejuiceBisss2 {
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 76);
+    rotate: 35deg;
+    top: calc(var(--vh, 1vh) * 43);
+    right: 64vw;
+} 
+
+#swipeOnDiv {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: calc(var(--vh, 1vh) * 71);
+    font-family: 'Alata';
+    font-size: 6vw;
+    color: whitesmoke;
+    text-align: center;
+    letter-spacing: -0.5vw;
+}
+
+#ldot4 {
+    --i: 1;
+}
+
+#ldot5 {
+    --i: 2;
+}
+
+#ldot6 {
+    --i: 3;
+}
+
+#l33 {
+    --i: 4;
+}
+#l34 {
+    --i: 5;
+}
+#l35 {
+    --i: 6;
+}
+#l36 {
+    --i: 7;
+}
+#l37 {
+    --i: 8;
+}
+#l38 {
+    --i: 9;
+}
+#l39 {
+    --i: 10;
+}
+#l40 {
+    --i: 11;
+}
+#l41 {
+    --i: 12;
+}
+#l42 {
+    --i: 13;
+}
+#l43 {
+    --i: 14;
+}
+#l44 {
+    --i: 15;
+}
+
+.letterJumpUp3 {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    animation-name: letterJumpUp3Anim;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: calc(4.5s + var(--i) * 40ms);
+}
+
+@keyframes letterJumpUp3Anim {
+    0%, 20%, 100% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-1vw);
+    }
+}
+
+#swipeIconBis {
+    position: absolute;
+    transition: opacity 1s;
+    height: calc(var(--vh, 1vh) * 16);
+    left: 35vw;
+    top: calc(var(--vh, 1vh) * 79);
+    animation-name: swipeIconBisAnim;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+}
+
+@keyframes swipeIconBisAnim {
+    0% {
+        left: 35vw;
+    }
+    50% {
+        left: 55vw;
+    }
+    100% {
+        left: 35vw;
+    }
+} 
+
+#miniGallery {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    max-width: 100vw;
+    left: 0vw;
+    top: 0vw;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+    background-color: black;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow-y: scroll;
+    z-index: 300;
+}   
+
+.miniature {
+    width: 30vw;
+    height: calc(var(--vh, 1vh) * 30);
+    /* z-index: 300; */
+}
+
+#exitMiniGalleryIcon {
+    position: fixed;
+    width: 36vw;
+    top: 2vw;
+    left: 2vw;
+    z-index: 302;
+}
+
+#enlargedPictureDiv {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    top: 0;
+    left: 0;
+    overflow: clip;
+    z-index: 400;
+}
+
+.enlargedPic {
+    position: absolute;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    top: 0;
+    left: 0;
+    overflow: clip;
+    z-index: 401;
+}
+
+#exitEnlargedPicIcon {
+    position: absolute;
+    width: 16vw;
+    top: 2vw;
+    left: 2vw;
+    opacity: 1;
+    z-index: 402;
+}
+
+#exitEnlargedPicIconAuthor {
+    display: none;
+    position: absolute;
+    width: 16vw;
+    top: 2vw;
+    left: 2vw;
+    opacity: 1;
+    z-index: 5001;
+}
+
+#gallpic30 {
+    background-image: url(matrixbackground.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+}
+
+#lukasz {
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 64);
+    left: 28vw;
+    bottom: calc(var(--vh, 1vh) * 110);
+    animation-name: lukaszAnim;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes lukaszAnim {
+    0% {
+        bottom: calc(var(--vh, 1vh) * 110);
+    }
+    100% {
+        bottom: calc(var(--vh, 1vh) * 14);
+    }
+} 
+
+#meet {
+    position: absolute;
+    left: 0;
+    top: calc(var(--vh, 1vh) * 2);
+    width: 100vw;
+    text-align: center;
+    font-family: 'Robot_Font';
+    font-size: 10vw;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px black;
+    animation: meetAnim 1s ease-in-out 0.5s 1 forwards;
+}
+
+@keyframes meetAnim {
+    0% {
+        color: whitesmoke;
+    }
+    50% {
+        color: yellow;
+    }
+    100% {
+        color: whitesmoke;
+    }
+}
+
+#hi {
+    position: absolute;
+    left: 4vw;
+    top: calc(var(--vh, 1vh) * 11);
+    width: 50vw;
+    text-align: left;
+    font-family: 'Robot_Font';
+    font-size: 7vw;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px black;
+    line-height: calc(var(--vh, 1vh) * 4.5);
+    animation-name: hiAnim;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.2s;
+    opacity: 0;
+}
+
+@keyframes hiAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
+#hobby {
+    position: absolute;
+    left: 0;
+    bottom: calc(var(--vh, 1vh) * 10);
+    width: 100vw;
+    text-align: center;
+    font-family: 'Robot_Font';
+    font-size: 8vw;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px black;
+    padding: 1vw;
+    opacity: 0;
+    animation: hobbyAnim 1s ease-in-out 3.2s 1 forwards, hobbyAnim2 25s ease-in-out 7s infinite forwards;
+}
+
+@keyframes hobbyAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
+ @keyframes hobbyAnim2 {
+    0% {
+        color: whitesmoke;
+    }
+    10% {
+        color: orange;
+    }
+    20% {
+        color: rgb(202, 145, 255);
+    }
+    30% {
+        color: rgb(105, 255, 253);
+    }
+    40% {
+        color: rgb(255, 121, 121);
+    }
+    50% {
+        color: rgb(252, 122, 202);
+    }
+    60% {
+        color: rgb(91, 200, 255);
+    }
+    70% {
+        color: yellow;
+    }
+    80% {
+        color: rgb(86, 251, 193);
+    }
+    90% {
+        color: rgb(185, 255, 162);
+    }
+    100% {
+        color: whitesmoke;
+    }
+} 
+
+#email {
+    position: absolute;
+    left: 0;
+    bottom: calc(var(--vh, 1vh) * 0);
+    width: 100vw;
+    text-align: center;
+    font-family: 'Robot_Font';
+    font-size: 6vw;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px black;
+    border: 2px solid rgb(63, 204, 61);
+    padding: 1vw;
+    animation-name: emailAnim;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s;
+    opacity: 0;
+}
+
+@keyframes emailAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
+#miniature30 {
+    display: inline-block;
+    width: 30vw;
+    height: calc(var(--vh, 1vh) * 30);
+    z-index: 301;
+    background-color: rgb(0, 65, 1);
+}
+
+#neo {
+    display: block;
+    width: 30vw;
+    height: calc(var(--vh, 1vh) * 18);
+    margin-top: calc(var(--vh, 1vh) * 6);
+}
+
+.visibleAuthor {
+    display: block;
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    max-height: calc(var(--vh, 1vh) * 100);
+    max-width: 100vw;
+    left: 0vw;
+    top: 0vw;
+    overflow: clip;
+    padding: 0;
+    background-image: url(matrixbackground.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    z-index: 5000;
+}
+
+
+#travolta {
+    position: absolute;
+    height: calc(var(--vh, 1vh) * 50);
+    width: 100vw;
+    left: 0vw;
+    top: 50vw;
+    overflow: clip;
+    padding: 0;
+    z-index: 10000;
+}
