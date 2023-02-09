@@ -121,7 +121,7 @@ body {
     z-index: 12000;
 }
 
-#superman2 {
+/* #superman2 {
     display: block;
     position: absolute;
     height: calc(var(--vh, 1vh) * 34);
@@ -153,28 +153,49 @@ body {
         left: 10vw;
         rotate: 0deg;
     }
-}
+} */
 
 #spiderman2 {
     display: block;
     position: absolute;
     height: calc(var(--vh, 1vh) * 32);
     right: 0vw;
-    bottom: calc(var(--vh, 1vh) * 105);
+    top: calc(var(--vh, 1vh) * -60);
+    z-index: 20000;
+}
+
+.spiderman2Animation {
     animation-name: spiderman2Anim;
     animation-duration: 3s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
-    animation-delay: 2s;
 }
 
 @keyframes spiderman2Anim {
     0% {
-        bottom: calc(var(--vh, 1vh) * 105);
+        top: calc(var(--vh, 1vh) * -60);
     }
     100% {
-        bottom: calc(var(--vh, 1vh) * 66);
+        top: calc(var(--vh, 1vh) * 4);
+    }
+}
+
+.spiderman2Animation2 {
+    animation-name: spiderman2Anim2;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    top: calc(var(--vh, 1vh) * 4);
+}
+
+@keyframes spiderman2Anim2 {
+    0% {
+        top: calc(var(--vh, 1vh) * 4);
+    }
+    100% {
+        top: calc(var(--vh, 1vh) * 150);
     }
 }
 
@@ -271,7 +292,6 @@ body {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
-    /* animation-delay: 21s; */
     top: calc(var(--vh, 1vh) * -60);
 }
 
@@ -305,7 +325,7 @@ body {
     0% {
         rotate: 0deg;
     }
-    20% {
+    30% {
         rotate: -150deg;
     }
     62% {
@@ -471,7 +491,7 @@ body {
         left: 3vw;
         top: calc(var(--vh, 1vh) * 46);
     }
-    97% {
+    95% {
         height: calc(var(--vh, 1vh) * 50);
         rotate: -362deg;
         left: 3vw;
@@ -523,12 +543,12 @@ body {
         top: calc(var(--vh, 1vh) * 45);
         rotate: 0deg;
     }  
-    81% {
+    77% {
         top: calc(var(--vh, 1vh) * 45);
         rotate: 88deg;
         left: 53vw;
     }
-    94% {
+    90% {
         top: calc(var(--vh, 1vh) * 45);
         rotate: 88deg;
         left: 32vw;
