@@ -8,6 +8,7 @@ window.addEventListener('resize', () => {
 });
 
 
+
 window.addEventListener("load", function() {
 
 //WHEN USER ROTATES PHONE SCREEN TO HORIZONTAL, HE GETS A WARNING/////////////////////
@@ -67,13 +68,12 @@ window.addEventListener("load", function() {
         }
 
         remove("loadingContainer");
+
+        document.getElementById('spiderman2').addEventListener("animationend", function() {
+            document.getElementById('spiderman2').className += " spiderman2Animation2";
+        });
+        setTimeout(remove, 22000, 'spiderman2');
         
-        // remove("loadingIcon");
-        // remove("loadingSentenceDiv");
-
-        // remove("superman2");
-        // remove("spiderman2");
-
         document.getElementById('superman').className = 'supermanAnimation';
         document.getElementById('heman').className = 'hemanAnimation';
         setTimeout(remove, 11500, 'superman');
