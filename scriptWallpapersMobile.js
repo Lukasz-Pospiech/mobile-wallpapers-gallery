@@ -354,7 +354,7 @@ window.addEventListener("load", function() {
     }, false);
 
     function enterMiniGallery() {
-        document.getElementById("miniGallery").style.display = "block";
+        document.getElementById("miniGallery").style.display = "grid";
         setTimeout(incrOpacity, 1);
         function incrOpacity() {
             document.getElementById("miniGallery").style.opacity = "1";
@@ -418,5 +418,22 @@ window.addEventListener("load", function() {
      
         }
     }
+
+    document.getElementById('bossDiv').addEventListener("touchstart", function(event) {
+        if (event.changedTouches[0]) {
+            document.getElementById('boss').src = 'boss.gif';
+            document.getElementById('boss').style.display = 'block';
+            document.getElementById('bossDiv').style.backgroundImage = 'none';
+            setTimeout(removeBoss, 3960, 'boss');
+            function removeBoss() {  
+                document.getElementById('boss').style.display = 'none';
+                document.getElementById('boss').src = '';
+            }
+            setTimeout(restoreQuestion, 3960);
+            function restoreQuestion() {
+                document.getElementById('bossDiv').style.backgroundImage = "url(question.jpg)";
+            }
+        }
+    }, false);
 
 });
